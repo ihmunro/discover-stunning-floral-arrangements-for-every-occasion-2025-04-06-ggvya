@@ -20,14 +20,20 @@
             --secondary-color: #f43f5e;
             --background-light: #ffffff;
             --text-light: #1f2937;
-            --background-dark: #1f2937;
-            --text-dark: #f3f4f6;
+            --background-dark: #111827;
+            --text-dark: #f9fafb;
             --card-light: #ffffff;
-            --card-dark: #374151;
+            --card-dark: #1f2937;
             --border-light: #e5e7eb;
-            --border-dark: #4b5563;
+            --border-dark: #374151;
             --hover-light: #f3f4f6;
-            --hover-dark: #4b5563;
+            --hover-dark: #374151;
+            --header-light: rgba(255, 255, 255, 0.95);
+            --header-dark: rgba(17, 24, 39, 0.95);
+            --section-light: #f9fafb;
+            --section-dark: #111827;
+            --section-alt-light: #f3f4f6;
+            --section-alt-dark: #1f2937;
         }
 
         [data-theme="dark"] {
@@ -36,6 +42,9 @@
             --card-bg: var(--card-dark);
             --border-color: var(--border-dark);
             --hover-bg: var(--hover-dark);
+            --header-bg: var(--header-dark);
+            --section-bg: var(--section-dark);
+            --section-alt-bg: var(--section-alt-dark);
         }
 
         [data-theme="light"] {
@@ -44,6 +53,9 @@
             --card-bg: var(--card-light);
             --border-color: var(--border-light);
             --hover-bg: var(--hover-light);
+            --header-bg: var(--header-light);
+            --section-bg: var(--section-light);
+            --section-alt-bg: var(--section-alt-light);
         }
 
         body {
@@ -121,6 +133,47 @@
 
         .card:hover {
             background-color: var(--hover-bg);
+        }
+
+        /* Dark mode specific styles */
+        [data-theme="dark"] .bg-white {
+            background-color: var(--card-dark);
+        }
+
+        [data-theme="dark"] .bg-gray-50 {
+            background-color: var(--section-alt-dark);
+        }
+
+        [data-theme="dark"] .text-gray-600 {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .text-gray-500 {
+            color: #9ca3af;
+        }
+
+        [data-theme="dark"] .border-gray-100 {
+            border-color: var(--border-dark);
+        }
+
+        [data-theme="dark"] .border-gray-200 {
+            border-color: var(--border-dark);
+        }
+
+        [data-theme="dark"] .hover\:bg-rose-50:hover {
+            background-color: rgba(225, 29, 72, 0.1);
+        }
+
+        [data-theme="dark"] .hover\:text-gray-900:hover {
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] .bg-rose-100 {
+            background-color: rgba(225, 29, 72, 0.2);
+        }
+
+        [data-theme="dark"] .bg-rose-900 {
+            background-color: rgba(225, 29, 72, 0.3);
         }
     </style>
 </head>
@@ -522,18 +575,35 @@
             if (!metaThemeColor) {
                 const meta = document.createElement('meta');
                 meta.name = 'theme-color';
-                meta.content = theme === 'dark' ? '#1f2937' : '#ffffff';
+                meta.content = theme === 'dark' ? '#111827' : '#ffffff';
                 document.head.appendChild(meta);
             } else {
-                metaThemeColor.content = theme === 'dark' ? '#1f2937' : '#ffffff';
+                metaThemeColor.content = theme === 'dark' ? '#111827' : '#ffffff';
             }
 
             // Update body classes for Tailwind dark mode
             if (theme === 'dark') {
                 document.body.classList.add('dark');
+                document.body.style.backgroundColor = 'var(--background-dark)';
+                document.body.style.color = 'var(--text-dark)';
             } else {
                 document.body.classList.remove('dark');
+                document.body.style.backgroundColor = 'var(--background-light)';
+                document.body.style.color = 'var(--text-light)';
             }
+
+            // Update all sections
+            document.querySelectorAll('section').forEach(section => {
+                if (section.classList.contains('bg-white') || section.classList.contains('bg-gray-50')) {
+                    section.style.backgroundColor = theme === 'dark' ? 'var(--section-bg)' : 'var(--section-alt-bg)';
+                }
+            });
+
+            // Update all cards
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.backgroundColor = theme === 'dark' ? 'var(--card-dark)' : 'var(--card-light)';
+                card.style.borderColor = theme === 'dark' ? 'var(--border-dark)' : 'var(--border-light)';
+            });
         }
 
         // Check for saved theme preference or system preference
