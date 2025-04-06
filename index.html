@@ -22,16 +22,28 @@
             --text-light: #1f2937;
             --background-dark: #1f2937;
             --text-dark: #f3f4f6;
+            --card-light: #ffffff;
+            --card-dark: #374151;
+            --border-light: #e5e7eb;
+            --border-dark: #4b5563;
+            --hover-light: #f3f4f6;
+            --hover-dark: #4b5563;
         }
 
         [data-theme="dark"] {
             --background-color: var(--background-dark);
             --text-color: var(--text-dark);
+            --card-bg: var(--card-dark);
+            --border-color: var(--border-dark);
+            --hover-bg: var(--hover-dark);
         }
 
         [data-theme="light"] {
             --background-color: var(--background-light);
             --text-color: var(--text-light);
+            --card-bg: var(--card-light);
+            --border-color: var(--border-light);
+            --hover-bg: var(--hover-light);
         }
 
         body {
@@ -87,17 +99,29 @@
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            padding: 10px;
+            padding: 12px;
             border-radius: 50%;
             background: var(--primary-color);
             color: white;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 2px solid var(--background-color);
         }
 
         .theme-toggle:hover {
             transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: var(--hover-bg);
         }
     </style>
 </head>
@@ -205,48 +229,48 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-24 bg-white">
+    <section id="features" class="py-24 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Elevate Your Experience with Premium Floral Services</h2>
+            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Elevate Your Experience with Premium Floral Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Feature cards with enhanced content -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6">
+                <div class="card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-rose-100 dark:bg-rose-900 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Master Florists</h3>
-                    <p class="text-gray-600 leading-relaxed">Our award-winning team brings over 25 years of combined experience, creating stunning arrangements that exceed expectations. Each florist is certified and regularly trained in the latest floral design techniques.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Master Florists</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Our award-winning team brings over 25 years of combined experience, creating stunning arrangements that exceed expectations. Each florist is certified and regularly trained in the latest floral design techniques.</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6">
+                <div class="card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-rose-100 dark:bg-rose-900 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Bespoke Design Service</h3>
-                    <p class="text-gray-600 leading-relaxed">Experience our signature consultation process where we work closely with you to create arrangements that perfectly match your vision, style, and occasion. Every detail is thoughtfully considered.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Bespoke Design Service</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Experience our signature consultation process where we work closely with you to create arrangements that perfectly match your vision, style, and occasion. Every detail is thoughtfully considered.</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6">
+                <div class="card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-rose-100 dark:bg-rose-900 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Premium Selection</h3>
-                    <p class="text-gray-600 leading-relaxed">Access to rare and exotic blooms sourced daily from premium growers worldwide. Our flowers are carefully selected and conditioned to ensure maximum freshness and longevity.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Premium Selection</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Access to rare and exotic blooms sourced daily from premium growers worldwide. Our flowers are carefully selected and conditioned to ensure maximum freshness and longevity.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section id="benefits" class="py-24 bg-gray-50">
+    <section id="benefits" class="py-24 bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Experience the Bloom Difference</h2>
+            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Experience the Bloom Difference</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Enhanced benefit cards -->
                 <div class="text-center transform hover:scale-105 transition-all duration-300">
@@ -255,8 +279,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Effortless Ordering</h3>
-                    <p class="text-gray-600">Complete your order in under 5 minutes with our streamlined process. Real-time preview and instant confirmation give you peace of mind.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Effortless Ordering</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Complete your order in under 5 minutes with our streamlined process. Real-time preview and instant confirmation give you peace of mind.</p>
                 </div>
 
                 <div class="text-center transform hover:scale-105 transition-all duration-300">
@@ -265,8 +289,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Guaranteed Freshness</h3>
-                    <p class="text-gray-600">7-day freshness guarantee on all arrangements. We source directly from growers to ensure the highest quality blooms.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Guaranteed Freshness</h3>
+                    <p class="text-gray-600 dark:text-gray-300">7-day freshness guarantee on all arrangements. We source directly from growers to ensure the highest quality blooms.</p>
                 </div>
 
                 <div class="text-center transform hover:scale-105 transition-all duration-300">
@@ -275,20 +299,20 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Premium Delivery</h3>
-                    <p class="text-gray-600">Temperature-controlled vehicles and expert handling ensure your arrangements arrive in perfect condition. Real-time tracking included.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Premium Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Temperature-controlled vehicles and expert handling ensure your arrangements arrive in perfect condition. Real-time tracking included.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-24 bg-white">
+    <section id="testimonials" class="py-24 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">What Our Clients Say</h2>
+            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">What Our Clients Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Testimonial cards -->
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="card rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="flex text-rose-500">
                             <i class="fas fa-star"></i>
@@ -298,16 +322,16 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">"The attention to detail was exceptional. I ordered flowers for my daughter's wedding, and the arrangements exceeded our expectations. The team was professional, responsive, and delivered exactly what we envisioned."</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">"The attention to detail was exceptional. I ordered flowers for my daughter's wedding, and the arrangements exceeded our expectations. The team was professional, responsive, and delivered exactly what we envisioned."</p>
                     <div class="flex items-center">
                         <div>
-                            <p class="font-semibold text-gray-900">Sarah Johnson</p>
-                            <p class="text-sm text-gray-500">Mother of the Bride</p>
+                            <p class="font-semibold text-gray-900 dark:text-white">Sarah Johnson</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Mother of the Bride</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="card rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="flex text-rose-500">
                             <i class="fas fa-star"></i>
@@ -317,16 +341,16 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">"I use Bloom for all my corporate events. Their service is reliable, the arrangements are always fresh and stunning, and they make the ordering process incredibly simple. Highly recommended!"</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">"I use Bloom for all my corporate events. Their service is reliable, the arrangements are always fresh and stunning, and they make the ordering process incredibly simple. Highly recommended!"</p>
                     <div class="flex items-center">
                         <div>
-                            <p class="font-semibold text-gray-900">Michael Chen</p>
-                            <p class="text-sm text-gray-500">Event Coordinator, Tech Solutions Inc.</p>
+                            <p class="font-semibold text-gray-900 dark:text-white">Michael Chen</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Event Coordinator, Tech Solutions Inc.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="card rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="flex text-rose-500">
                             <i class="fas fa-star"></i>
@@ -336,16 +360,16 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">"The quality of flowers and customer service is outstanding. I've been a regular customer for over a year, and they never disappoint. The arrangements always last well beyond a week."</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">"The quality of flowers and customer service is outstanding. I've been a regular customer for over a year, and they never disappoint. The arrangements always last well beyond a week."</p>
                     <div class="flex items-center">
                         <div>
-                            <p class="font-semibold text-gray-900">Emma Thompson</p>
-                            <p class="text-sm text-gray-500">Interior Designer</p>
+                            <p class="font-semibold text-gray-900 dark:text-white">Emma Thompson</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Interior Designer</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="card rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="flex text-rose-500">
                             <i class="fas fa-star"></i>
@@ -355,11 +379,11 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">"Their same-day delivery service saved me more than once! The flowers are always fresh and beautifully arranged. The online ordering system is intuitive and user-friendly."</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">"Their same-day delivery service saved me more than once! The flowers are always fresh and beautifully arranged. The online ordering system is intuitive and user-friendly."</p>
                     <div class="flex items-center">
                         <div>
-                            <p class="font-semibold text-gray-900">David Rodriguez</p>
-                            <p class="text-sm text-gray-500">Business Professional</p>
+                            <p class="font-semibold text-gray-900 dark:text-white">David Rodriguez</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Business Professional</p>
                         </div>
                     </div>
                 </div>
@@ -368,14 +392,14 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-24 bg-gray-50">
+    <section id="about" class="py-24 bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Our Story</h2>
+            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Our Story</h2>
             <div class="max-w-3xl mx-auto space-y-8">
-                <p class="text-gray-600 leading-relaxed">
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Founded in 2010 by master florist Isabella Chen, Bloom began as a small boutique in downtown Seattle with a vision to create extraordinary floral experiences. What started as a passion project has blossomed into the region's premier floral design studio, serving thousands of satisfied customers and earning numerous industry accolades for our innovative designs and commitment to excellence.
                 </p>
-                <p class="text-gray-600 leading-relaxed">
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                     At Bloom, our mission is to transform ordinary moments into extraordinary memories through the artistry of flowers. We believe in sustainable practices, supporting local growers, and delivering unparalleled customer service. Our core values of creativity, quality, and customer satisfaction drive everything we do, from selecting the finest blooms to ensuring perfect delivery of every arrangement.
                 </p>
             </div>
@@ -383,33 +407,33 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-white">
+    <section id="faq" class="py-24 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Frequently Asked Questions</h2>
+            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all duration-300">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What is your delivery area and timing?</h3>
-                    <p class="text-gray-600">We deliver throughout the greater metropolitan area, with same-day delivery available for orders placed before 2 PM. Standard delivery hours are 9 AM to 6 PM, Tuesday through Sunday. Specific delivery windows can be requested for an additional fee.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">What is your delivery area and timing?</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We deliver throughout the greater metropolitan area, with same-day delivery available for orders placed before 2 PM. Standard delivery hours are 9 AM to 6 PM, Tuesday through Sunday. Specific delivery windows can be requested for an additional fee.</p>
                 </div>
 
                 <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all duration-300">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">How long will my flowers last?</h3>
-                    <p class="text-gray-600">With proper care, our arrangements typically last 7-10 days. We provide detailed care instructions with every delivery and offer a 7-day freshness guarantee on all our arrangements.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">How long will my flowers last?</h3>
+                    <p class="text-gray-600 dark:text-gray-300">With proper care, our arrangements typically last 7-10 days. We provide detailed care instructions with every delivery and offer a 7-day freshness guarantee on all our arrangements.</p>
                 </div>
 
                 <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all duration-300">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you offer custom arrangements?</h3>
-                    <p class="text-gray-600">Yes! We specialize in custom designs for any occasion. Our expert florists will work with you to create the perfect arrangement matching your style, color preferences, and budget. Contact us for a consultation.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Do you offer custom arrangements?</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Yes! We specialize in custom designs for any occasion. Our expert florists will work with you to create the perfect arrangement matching your style, color preferences, and budget. Contact us for a consultation.</p>
                 </div>
 
                 <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all duration-300">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What is your cancellation policy?</h3>
-                    <p class="text-gray-600">Orders can be cancelled or modified up to 24 hours before the scheduled delivery time for a full refund. For same-day orders, cancellations must be made within 2 hours of placing the order.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">What is your cancellation policy?</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Orders can be cancelled or modified up to 24 hours before the scheduled delivery time for a full refund. For same-day orders, cancellations must be made within 2 hours of placing the order.</p>
                 </div>
 
                 <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all duration-300">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you offer subscription services?</h3>
-                    <p class="text-gray-600">Yes, we offer weekly, bi-weekly, and monthly subscription plans for both residential and commercial clients. Subscribers enjoy priority service, exclusive designs, and preferential pricing.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Do you offer subscription services?</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Yes, we offer weekly, bi-weekly, and monthly subscription plans for both residential and commercial clients. Subscribers enjoy priority service, exclusive designs, and preferential pricing.</p>
                 </div>
             </div>
         </div>
@@ -486,11 +510,30 @@
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
             icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            
+            // Update meta theme-color for mobile browsers
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            if (!metaThemeColor) {
+                const meta = document.createElement('meta');
+                meta.name = 'theme-color';
+                meta.content = theme === 'dark' ? '#1f2937' : '#ffffff';
+                document.head.appendChild(meta);
+            } else {
+                metaThemeColor.content = theme === 'dark' ? '#1f2937' : '#ffffff';
+            }
         }
 
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        // Check for saved theme preference or system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
         setTheme(savedTheme);
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
 
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
